@@ -36,7 +36,21 @@
     fillOpacity: 0.5
   }).addTo(map);
 
-  polygon.bindPopup("This popup is working.").openPopup();
+  polygon.bindPopup("This popup is working.");
+
+  var geoJsonPoint = {
+    "type": "Feature",
+    "properties": {
+      "name": "Palermo",
+      "popupContent": "This is the city of Palermo"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [38.120051, 13.355728]
+    }
+  };
+
+  L.geoJson(geoJsonPoint).addTo(map);
 
 </script>
 
